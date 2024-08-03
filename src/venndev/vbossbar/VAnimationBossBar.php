@@ -6,7 +6,6 @@ namespace venndev\vbossbar;
 
 use Throwable;
 use vennv\vapm\Async;
-use vennv\vapm\FiberManager;
 use vennv\vapm\Promise;
 use vennv\vapm\System;
 
@@ -103,7 +102,9 @@ final class VAnimationBossBar
      * @return Async
      * @throws Throwable
      */
-    public static function pulse(VBossBar $bossBar, int $current, int $max, int $step, callable $callable, int $speed = 0): Async
+    public static function pulse(
+        VBossBar $bossBar, int $current, int $max, int $step, callable $callable, int $speed = 0
+    ): Async
     {
         return new Async(function () use ($bossBar, $current, $max, $step, $callable, $speed): void {
             if (!self::exists($bossBar)) {
@@ -124,7 +125,9 @@ final class VAnimationBossBar
      * This treatment makes the boss bar lose appearance a bit annoying for some people,
      *      if you have any suggestions, please support this!
      */
-    public static function cycleColor(VBossBar $bossBar, array $colors, callable $callable, int $speed = 0): Async
+    public static function cycleColor(
+        VBossBar $bossBar, array $colors, callable $callable, int $speed = 0
+    ): Async
     {
         return new Async(function () use ($bossBar, $colors, $callable, $speed): void {
             if (!self::exists($bossBar)) {
@@ -148,7 +151,9 @@ final class VAnimationBossBar
      * @param int $speed - The speed to animate <milliseconds>
      * @throws Throwable
      */
-    public static function cycleColorRandom(VBossBar $bossBar, array $colors, callable $callable, int $speed = 0): Async
+    public static function cycleColorRandom(
+        VBossBar $bossBar, array $colors, callable $callable, int $speed = 0
+    ): Async
     {
         return new Async(function () use ($bossBar, $colors, $callable, $speed): void {
             if (!self::exists($bossBar)) {
