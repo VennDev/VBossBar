@@ -6,4 +6,4 @@
 - [LibVapmPMMP](https://github.com/VennDev/LibVapmPMMP)
 
 # Example Plugin
-- [Click](https://github.com/VennDev/VTestBossBar)
+- [Click Here!](https://github.com/VennDev/VTestBossBar)
