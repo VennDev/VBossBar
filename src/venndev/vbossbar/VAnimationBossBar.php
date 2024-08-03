@@ -141,4 +141,28 @@ final class VAnimationBossBar
         });
     }
 
+    /**
+     * @param VBossBar $bossBar - The boss bar to animate
+     * @param array<int|string> $colors - The colors to change
+     * @param callable $callable (int|string $color, VBossBar) - The callable to execute
+     * @param int $speed - The speed to animate <milliseconds>
+     * @throws Throwable
+     */
+    public static function cycleColorRandom(VBossBar $bossBar, array $colors, callable $callable, int $speed = 0): Async
+    {
+        return new Async(function () use ($bossBar, $colors, $callable, $speed): void {
+            if (!self::exists($bossBar)) {
+                foreach ($colors as $color) {
+                    $players = $bossBar->getPlayers();
+                    Async::await($bossBar->removePlayers($players));
+                    $bossBar->setColor($colors[array_rand($colors)]);
+                    $bossBar->addPlayers($players);
+                    $callable($color, $bossBar);
+                    Async::await(self::sleep($speed));
+                }
+                self::unset($bossBar);
+            }
+        });
+    }
+
 }
