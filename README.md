@@ -9,5 +9,5 @@
 - [Click Here!](https://github.com/VennDev/VTestBossBar)
 
 # Credits
-- Original Developer: [VennDev](https://github.com/inxomnyaa)
-- Developer continues: [XenialDan](https://github.com/VennDev)
+- Original Developer: [XenialDan](https://github.com/inxomnyaa)
+- Developer continues: [VennDev](https://github.com/VennDev)
