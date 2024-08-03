@@ -7,3 +7,7 @@
 
 # Example Plugin
 - [Click Here!](https://github.com/VennDev/VTestBossBar)
+
+# Credits
+- Original Developer: https://github.com/inxomnyaa
+- Developer continues: https://github.com/VennDev
